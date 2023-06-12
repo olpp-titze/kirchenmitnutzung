@@ -1,0 +1,217 @@
+
+body{background-color:white;}
+h1,h4,p,u1,p.big{color:black}
+h1{
+    padding-top:60px;
+    letter-spacing: 5px;
+    margin-bottom:10px;
+    font-size: clamp(80px, 6vw, 400px);
+    padding-left: 2%;
+    font-family: "helvetica", sans-serif;
+    line-height: 0.8;
+    max-width: 35em;
+    display: block;
+}
+
+h2{
+    font-size: clamp(40px, 3vw, 200px);
+    font-family: "Helvetica",sans-serif;
+    color: rgb(205,23,25);
+    line-height: 1.8;
+    letter-spacing: 5px;
+    padding-top: 120px;
+    padding-left: 3.33%;
+    padding-right: 2%;
+    max-width: 35em;
+    display: block;
+}
+
+h4{
+    font-size: clamp(10px, 2vw, 25px);
+    font-family: "helvetica",sans-serif;
+    letter-spacing: 2px;
+    font-weight: normal;
+   margin-top: 13px;
+   margin-bottom: 22px;
+    display: block;
+}
+
+p.big{
+    font-size: clamp(40px, 2.4vw, 180px);
+    font-family:"garamond";
+    line-height: 1.6;
+    padding-left: 2%;
+    text-align: left;
+
+}
+
+p{
+    font-size: clamp(30px, 1.2vw, 100px);
+    font-family:"garamond";
+    line-height: 1.6;
+    text-align: left;
+
+}
+
+p.italic{
+  font-size: clamp(30px, 1.2vw, 100px);
+  font-family: "garamond",serif;
+  font-style: italic;
+  line-height: 1.2;
+  text-align: left;
+
+}
+
+p.unter{
+  font-size: clamp(20px, 1vw, 100px);
+  font-family: "garamond",serif;
+  font-style: italic;
+  line-height: 1.2;
+  text-align: right;
+  padding-top: 20px;
+
+}
+
+u1{
+    margin-top: 20px;
+    font-size: clamp(10px, 0.8vw, 80px);
+    font-family:'Courier New', Courier, monospace;
+    padding-left: 2%;
+    line-height: 0.8;
+    display: block;
+}
+
+
+  /* Style the top navigation bar */
+  .topnav {
+    overflow: hidden;
+  }
+  
+  /* Style the topnav links */
+  .topnav a {
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    font-family: "garamond", serif;
+    width: 14.28%;
+    text-decoration: none;
+  }
+  
+  /* Change color on hover */
+  .topnav a:hover {
+    background-color: rgba(250,250,250,0.5);
+    color: black;
+  }
+
+  div.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: -0.1;
+
+  }
+
+.column{
+    float:left;
+}
+
+.column.left{
+    width: 50%;
+    float:left;
+    margin-right: 3.33%;
+    margin-left:3.33%;    
+}
+
+.column.right{
+    float:right;
+    width:38.01%;
+    margin-right: 3.33%;
+    margin-left:2%;    
+}
+
+@media screen and (max-width:1000px) {
+    .column.left, .column.right {
+      width: 90%;
+    }
+    .column.right{
+        padding-top: 10%;
+    
+    }
+}
+.img {
+    float:right;
+    padding: 10%;
+    padding-top: 28px;
+    margin-top: 10px;
+    
+}
+
+.atlasimg {
+    float:right;
+    padding: 10%;
+    padding-top: 10px;
+    filter:drop-shadow(10px 10px 20px gray);
+    
+}
+
+.atlasgif {
+    float:right;
+    padding: 20%;
+    padding-top: 10px;
+    filter:drop-shadow(10px 10px 20px gray);
+    
+}
+
+.newimg {
+  float: right;
+  padding-top: 28px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  
+}
+
+.bigimg {
+  float: right;
+  padding-top: 28px;
+  margin-top: 10px;
+  
+}
+
+.responsive{
+    width:100%;
+    height:auto;
+}
+
+.absatz{
+    padding-bottom: 200px;
+}
+
+.hide {
+  display: none;
+}
+    
+.myDIV:hover + .hide {
+  display: contents;
+  font-size: clamp(20px, 1vw, 100px);
+  font-style: italic;
+}
+
+/*sorgt dafür, dass der nächste block darunter anfängt*/
+.row::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+/* unvisited link */
+a:link {
+    color: black;
+    font-weight: normal;
+  }
+  
+  
+  /* mouse over link */
+  a:hover {
+    color: rgb(205,23,25);
+
+  }
