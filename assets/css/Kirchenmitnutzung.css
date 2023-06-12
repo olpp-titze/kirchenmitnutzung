@@ -208,6 +208,11 @@ a:link {
     color: black;
     font-weight: normal;
   }
+
+/* visited link */
+a:visited {
+  color: black;
+}
   
   
   /* mouse over link */
