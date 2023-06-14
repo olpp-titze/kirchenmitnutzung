@@ -26,6 +26,19 @@ h2{
     display: block;
 }
 
+h3{
+  font-size: clamp(35px, 1.5vw, 110px);
+  font-family: "Helvetica",sans-serif;
+  color: rgb(205,23,25);
+  line-height: 1.8;
+  letter-spacing: 1px;
+  padding-top:0px;
+  padding-left: 0%;
+  padding-right: 2%;
+  max-width: 35em;
+  display: block;
+}
+
 h4{
     font-size: clamp(10px, 2vw, 25px);
     font-family: "helvetica",sans-serif;
@@ -94,7 +107,7 @@ u1{
     color: black;
     text-align: center;
     font-family: "garamond", serif;
-    width: 14.28%;
+    width: 12.5%;
     text-decoration: none;
   }
   
@@ -195,6 +208,9 @@ u1{
   font-size: clamp(20px, 1vw, 100px);
   font-style: italic;
 }
+.myDIV:hover {
+  color:rgb(205,23,25)
+}
 
 /*sorgt dafür, dass der nächste block darunter anfängt*/
 .row::after {
@@ -204,19 +220,67 @@ u1{
   }
 
 /* unvisited link */
-a:link {
+a.one:link {
     color: black;
     font-weight: normal;
+    text-decoration: none;
   }
 
 /* visited link */
-a:visited {
+a.one:visited {
   color: black;
+  text-decoration: none;
 }
   
   
   /* mouse over link */
-  a:hover {
+a.one:hover {
     color: rgb(205,23,25);
+    text-decoration: none;
+
+  }
+a.two:link {
+    color: rgb(205,23,25);
+    font-size:70%;
+    text-decoration: none;
+  }
+
+/* visited link */
+a.two:visited {
+  color: rgb(205,23,25);
+  text-decoration: none;
+}
+  
+  
+  /* mouse over link */
+a.two:hover {
+  color: rgb(205,23,25);
+  transition: 0.3s ease-in-out;
+    font-size: 80%;
+    size: 120%;
+
+  }
+
+  a.three:link {
+    float:right;
+    padding: 10%;
+    padding-top: 28px;
+    margin-top: 10px;
+    text-decoration: none;
+  }
+
+/* visited link */
+a.three:visited {
+  text-decoration: none;
+}
+  
+  
+  /* mouse over link */
+a.three:hover {
+  float:right;
+    padding: 7%;
+    padding-top: 28px;
+    margin-top: 10px;
+  transition: 0.3s ease-in-out;
 
   }
