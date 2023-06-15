@@ -174,25 +174,25 @@
 
 
 <div class="column left">
- <p class="italic"><a class="one" href="Friedenskirche.html">1.1 Friedenskirche</a>, 
-    <a class="one" href="St_Johannis.html">1.2 St. Johannis</a>,
-    <a class="one" href="Zum_Guten_Hirten.html">2 Zum Guten Hirten</a>,
-    <a class="one" href="Versöhnungskirche.html">3 Versöhnungskirche</a>,
+ <p class="italic"><a class="one" href="Friedenskirche.html" target="_blank">1.1 Friedenskirche</a>, 
+    <a class="one" href="St_Johannis.html" target="_blank">1.2 St. Johannis</a>,
+    <a class="one" href="Zum_Guten_Hirten.html" target="_blank">2 Zum Guten Hirten</a>,
+    <a class="one" href="Versoehnungskirche.html" target="_blank">3 Versöhnungskirche</a>,
 </p>
-<p class="italic"><a class="one" href="St_Matthäus_Maxfeld.html">4 St. Matthäus Maxfeld</a>,
-    <a class="one" href="St_Lukas.html">5 St. Lukas</a>,
-    <a class="one" href="St_Jobst.html">6 St. Jobst </a>,
-    <a class="one" href="Reformations_Gedächtniskirche.html">7 Reformations-Gedächtnis-Kirche</a>,
+<p class="italic"><a class="one" href="St_Matthaeus_Maxfeld.html" target="_blank">4 St. Matthäus Maxfeld</a>,
+    <a class="one" href="St_Lukas.html" target="_blank">5 St. Lukas</a>,
+    <a class="one" href="St_Jobst.html" target="_blank">6 St. Jobst </a>,
+    <a class="one" href="Reformations_Gedaechtniskirche.html" target="_blank">7 Reformations-Gedächtnis-Kirche</a>,
 </p>
-<p class="italic"><a class="one" href="St_Georg.html">8.1 St. Georg</a>,
-    <a class="one" href="Almoshof.html">8.2 Kirche Almoshof</a>,
-    <a class="one" href="St_Bartholomäus.html">9 St. Bartholomäus</a>,
-    <a class="one" href="St_Andreas.html">10 St. Andreas </a>,
+<p class="italic"><a class="one" href="St_Georg.html" target="_blank">8.1 St. Georg</a>,
+    <a class="one" href="Almoshof.html" target="_blank">8.2 Kirche Almoshof</a>,
+    <a class="one" href="St_Bartholomaeus.html" target="_blank">9 St. Bartholomäus</a>,
+    <a class="one" href="St_Andreas.html" target="_blank">10 St. Andreas </a>,
 </p>
-<p class="italic"><a class="one" href="Melanchthonkirche.html">11.1 Melanchthonkirche</a>,
-    <a class="one" href="Gnadenkirche.html">11.2 Gnadenkirche</a>,
-    <a class="one" href="Himmelfahrtskirche.html">12 Himmelfahrtskirche</a>,
-    <a class="one" href="St_Matthäus_Heroldsberg.html">13 St. Matthäus Heroldsberg</a>,
+<p class="italic"><a class="one" href="Melanchthonkirche.html" target="_blank">11.1 Melanchthonkirche</a>,
+    <a class="one" href="Gnadenkirche.html" target="_blank">11.2 Gnadenkirche</a>,
+    <a class="one" href="Himmelfahrtskirche.html" target="_blank">12 Himmelfahrtskirche</a>,
+    <a class="one" href="St_Matthus_Heroldsberg.html" target="_blank">13 St. Matthäus Heroldsberg</a>,
 
 </p>
         </div>
@@ -223,7 +223,7 @@
 
     <p class="italic">Die Kirchen sollen auch bei einer Umnutzung ein öffentlicher Ort bleiben oder ein öffentliches Interesse verfolgen</p>
 </div> 
-<div class="column" style="width:45%">
+<div class="column" style="width:45%; margin-right:3.33%">
     <div style="padding:2%">
     <p class="italic">Gemeinden können in verschiedener Weise von einer Umnutzung profitieren. Zum Beispiel durch das rennovierten von  Gebäuden, dauerhaft geheizten Räumen, der engeren Verbindung mit dem Stadtteil oder  zusätzlichen Einnahmen.
     </p>
@@ -233,13 +233,504 @@
     
     <p class="italic">Große Varianz an Nutzungen um jeder Kirche ein eigenes Profil zu geben und Konkurrenz um Besucher zu vermeiden.
   </div>  
-</div>
-    </p>
-        <div class="bigimg" style="margin: 2%">
-            <img src="assets/images/Kirchenmitnutzung_img/Großer_Plan_Gecropt.jpg" alt="Masterplan" class="responsive">
-        </div>
+
 </div>
 </div>
+<!--Leaflet Karte-->
+<div>
+    <head> 
+    
+        
+         <!-- CSS + java für Leaflet -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+        crossorigin=""/>
+        <!-- Make sure you put this AFTER Leaflet's CSS -->
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+        crossorigin=""></script>
+    
+        <link rel="stylesheet" href="assets/css/Kirchenmitnutzung_karte_leaflet.css">
+    
+    
+    </head>
+    
+    <body>
+    
+    <!-- Script für Leaflet Karte --> 
+        <div id="map"></div>
+    <script> 
+    var map = L.map('map', {crs: L.CRS.Simple,
+        zoomSnap: 0.4,
+        zoomDelta: 0.25,
+    });
+    
+    var bounds = [[0,0], [1000,1000]];
+    var image = L.imageOverlay('assets/images/Karte/Karte_website_6000x6000_2.jpg', bounds).addTo(map);
+    
+    map.fitBounds(bounds);
+    
+    map.setZoom([0.8]);
+    map.setMinZoom([-1]);
+    map.setMaxZoom([2.5]);  
+    
+    </script>
+    
+    
+    
+    <!-- Popup + Link Johannis Friedenskirche --> 
+    <script>   
+        var circle_Friedenskirche = L.circle([197, 341], {
+            color: 'none',
+            fillColor: "white",
+            fillOpacity: 0,
+            radius: 30,
+            }).addTo(map);
+        // koordinaten in [y, x]//
+    
+        // create popup contents
+        FriedenskirchePopup = "<img src='assets/images/PopUp_Gemeindeinformationen_300\%/01.1.Friedenskirche.png' alt='info Kraftshof' width='174px'/>";
+    
+        // popup on mouseover + click -> website
+        L.featureGroup([circle_Friedenskirche])
+         .bindPopup(FriedenskirchePopup)
+         .on('mouseover', function (e) {
+                this.openPopup();
+            })
+         .on('mouseout', function (e) {
+                this.closePopup();
+            })
+         .on("click", function onClick(e) {
+            window.open("Friedenskirche.html#Konzept");})
+        .addTo(map);
+    
+    </script>
+    
+    
+    <!-- Popup + Link Johannis Johanniskirche --> 
+    <script>
+        
+        var circle_St_Johannis = L.circle([158, 319], {
+            color: 'none',
+            fillColor: "white",
+            fillOpacity: 0,
+            radius: 30,
+            }).addTo(map);
+        // koordinaten in [y, x]//
+    
+        // create popup contents
+        St_JohannisPopup = "<img src='assets/images/PopUp_Gemeindeinformationen_300\%/01.2.St_Johannis.png' alt='info Kraftshof' width='178px'/>";
+    
+        // popup on mouseover + click -> website
+        L.featureGroup([circle_St_Johannis])
+         .bindPopup(St_JohannisPopup)
+         .on('mouseover', function (e) {
+                this.openPopup();
+            })
+         .on('mouseout', function (e) {
+                this.closePopup();
+            })
+         .on("click", function onClick(e) {
+            window.open("St_Johannis.html#Konzept");})
+        .addTo(map);
+    </script>
+    
+    
+    <!--Popup + Link Boxdorf Zum Guten Hirten -->
+    <script>    
+        var circle_Zum_Guten_Hirten = L.circle([678, 137], {
+             color: 'none',
+             fillColor: "white",
+             fillOpacity: 0,
+             radius: 30,
+            }).addTo(map);
+        // koordinaten in [y, x]//
+    
+        // create popup contents
+        var Zum_Guten_HirtenPopup = "<img src='assets/images/PopUp_Gemeindeinformationen_300\%/02.Zum_Guten_Hirten.png' alt='info Boxdorf' width='193px'/>";
+    
+        // popup on mouseover + click -> website
+        L.featureGroup([circle_Zum_Guten_Hirten])
+         .bindPopup(Zum_Guten_HirtenPopup)
+         .on('mouseover', function (e) {
+                this.openPopup();
+            })
+         .on('mouseout', function (e) {
+                this.closePopup();
+            })
+         .on("click", function onClick(e) {
+            window.open("Zum_Guten_Hirten.html#Konzept");})
+        .addTo(map);
+    </script>
+    
+    <!--Popup + Link Schniegling Versöhnungskirche/--> 
+     <script>  
+        var circle_Versoehnungskirche = L.circle([253, 152], {
+             color: 'none',
+             fillColor: "white",
+             fillOpacity: 0,
+             radius: 30,
+            }).addTo(map);
+        // koordinaten in [y, x]//
+    
+        // create popup contents
+        var VersoehnungskirchePopup = "<img src='assets/images/PopUp_Gemeindeinformationen_300\%/03.Versoehnungskirche.png' alt='info Versöhnungskirche' width='199px'/>";
+    
+        // popup on mouseover + click -> website
+        L.featureGroup([circle_Versoehnungskirche])
+         .bindPopup(VersoehnungskirchePopup)
+         .on('mouseover', function (e) {
+                this.openPopup();
+            })
+         .on('mouseout', function (e) {
+                this.closePopup();
+            })
+         .on("click", function onClick(e) {
+            window.open("Versoehnungskirche.html#Konzept");})
+        .addTo(map);
+    </script>
+    
+    
+    <!--//Popup + Link St_Matthaeus_Maxfeld// -->
+    <script>  
+    var circle_St_Matthaeus_Maxfeld = L.circle([245, 442], {
+            color: 'none',
+            fillColor: "white",
+            fillOpacity: 0,
+            radius: 30,
+            }).addTo(map);
+        // koordinaten in [y, x]//
+    
+        // create popup contents
+        St_Matthaeus_MaxfeldPopup = "<img src='assets/images/PopUp_Gemeindeinformationen_300\%/04.St_Matthaeus_Maxfeld.png' alt='info St_Matthaeus_Maxfeld' width='137px'/>";
+    
+        // popup on mouseover + click -> website
+        L.featureGroup([circle_St_Matthaeus_Maxfeld])
+         .bindPopup(St_Matthaeus_MaxfeldPopup)
+         .on('mouseover', function (e) {
+                this.openPopup();
+            })
+         .on('mouseout', function (e) {
+                this.closePopup();
+            })
+         .on("click", function onClick(e) {
+            window.open("St_Matthaeus_Maxfeld.html#Konzept");})
+        .addTo(map);
+    </script> 
+    
+    <!--//Popup + Link St_Lukas//--> 
+     <script>   
+    var circleSt_Lukas = L.circle([270, 581], {
+            color: 'none',
+            fillColor: "white",
+            fillOpacity: 0,
+            radius: 30,
+            }).addTo(map);
+        // koordinaten in [y, x]//
+    
+        // create popup contents
+    St_LukasPopup = "<img src='assets/images/PopUp_Gemeindeinformationen_300\%/05.St_Lukas.png' alt='info St. Lukas' width='183px'/>";
+    
+        // popup on mouseover + click -> website
+        L.featureGroup([circleSt_Lukas])
+         .bindPopup(St_LukasPopup)
+         .on('mouseover', function (e) {
+                this.openPopup();
+            })
+         .on('mouseout', function (e) {
+                this.closePopup();
+            })
+         .on("click", function onClick(e) {
+            window.open("St_Lukas.html#Konzept");})
+        .addTo(map);
+    </script>
+    
+    
+    <!--//Popup + Link St_Jobst//--> 
+    <script>  
+        var circleSt_Jobst = L.circle([220, 655], {
+            color: 'none',
+            fillColor: "white",
+            fillOpacity: 0,
+            radius: 30,
+            }).addTo(map);
+        // koordinaten in [y, x]//
+    
+        // create popup contents
+    St_JobstPopup = "<img src='assets/images/PopUp_Gemeindeinformationen_300\%/06.St_Jobst.png' alt='info St_Jobst' width='148px'/>";
+    
+        // popup on mouseover + click -> website
+        L.featureGroup([circleSt_Jobst])
+         .bindPopup(St_JobstPopup)
+         .on('mouseover', function (e) {
+                this.openPopup();
+            })
+         .on('mouseout', function (e) {
+                this.closePopup();
+            })
+         .on("click", function onClick(e) {
+            window.open("St_Jobst.html#Konzept");})
+        .addTo(map);
+    </script>
+    
+    
+    <!--//Popup + Link Reformations_Gedaechtniskirche// -->
+    <script>  
+    var circleReformations_Gedaechtniskirche = L.circle([216, 523], {
+            color: 'none',
+            fillColor: "white",
+            fillOpacity: 0,
+            radius: 30,
+            }).addTo(map);
+        // koordinaten in [y, x]//
+    
+        // create popup contents
+    Reformations_GedaechtniskirchePopup = "<img src='assets/images/PopUp_Gemeindeinformationen_300\%/07.Reformations_Gedaechtniskirche.png' alt='info Reformationsgedächtniskirche' width='165px'/>";
+    
+        // popup on mouseover + click -> website
+        L.featureGroup([circleReformations_Gedaechtniskirche])
+         .bindPopup(Reformations_GedaechtniskirchePopup)
+         .on('mouseover', function (e) {
+                this.openPopup();
+            })
+         .on('mouseout', function (e) {
+                this.closePopup();
+            })
+         .on("click", function onClick(e) {
+            window.open("Reformations_Gedaechtniskirche.html#Konzept");})
+        .addTo(map);
+    </script> 
+    
+    
+    <!--//Popup + Link St_Georg// -->
+     <script>  
+    var circleSt_Georg = L.circle([614, 256], {
+            color: 'none',
+            fillColor: "white",
+            fillOpacity: 0,
+            radius: 40,
+            }).addTo(map);
+        // koordinaten in [y, x]//
+    
+        // create popup contents
+    St_GeorgPopup = "<img src='assets/images/PopUp_Gemeindeinformationen_300\%/08.1.St_Georg.png' alt='info St_Georg' width='138px'/>";
+    
+        // popup on mouseover + click -> website
+        L.featureGroup([circleSt_Georg])
+         .bindPopup(St_GeorgPopup)
+         .on('mouseover', function (e) {
+                this.openPopup();   
+            })
+         .on('mouseout', function (e) {
+                this.closePopup();
+            })
+         .on("click", function onClick(e) {
+            window.open("St_Georg.html#Konzept");})
+        .addTo(map);
+    </script>
+    
+    <!--//Popup + Link Almoshof// -->
+     <script>  
+    var circleAlmoshof = L.circle([442, 317], {
+            color: 'none',
+            fillColor: "white",
+            fillOpacity: 0,
+            radius: 30,
+            }).addTo(map);
+        // koordinaten in [y, x]//
+    
+        // create popup contents
+    AlmoshofPopup = "<img src='assets/images/PopUp_Gemeindeinformationen_300\%/08.2.Almoshof.png' alt='info Almoshof' width='191px'/>";
+    
+        // popup on mouseover + click -> website
+        L.featureGroup([circleAlmoshof])
+         .bindPopup(AlmoshofPopup)
+         .on('mouseover', function (e) {
+                this.openPopup();
+            })
+         .on('mouseout', function (e) {
+                this.closePopup();
+            })
+         .on("click", function onClick(e) {
+            window.open("Almoshof.html#Konzept");})
+        .addTo(map);
+    </script> 
+    
+    <!--//Popup + Link St_Bartholomaeus// -->
+    <script> 
+    var circleSt_Bartholomaeus = L.circle([145, 514], {
+            color: 'none',
+            fillColor: "white",
+            fillOpacity: 0,
+            radius: 30,
+            }).addTo(map);
+        // koordinaten in [y, x]//
+    
+        // create popup contents
+    St_BartholomaeusPopup = "<img src='assets/images/PopUp_Gemeindeinformationen_300\%/09.St_Bartholomaeus.png' alt='info St_Bartholomaeus' width='176px'/>";
+    
+        // popup on mouseover + click -> website
+        L.featureGroup([circleSt_Bartholomaeus])
+         .bindPopup(St_BartholomaeusPopup)
+         .on('mouseover', function (e) {
+                this.openPopup();
+            })
+         .on('mouseout', function (e) {
+                this.closePopup();
+            })
+         .on("click", function onClick(e) {
+            window.open("St_Bartholomaeus.html#Konzept");})
+        .addTo(map);
+    </script> 
+    
+    <!--//Popup + Link St_Andreas// -->
+     <script> 
+    var circleSt_Andreas = L.circle([308, 358], {
+            color: 'none',
+            fillColor: "white",
+            fillOpacity: 0,
+            radius: 30,
+            }).addTo(map);
+        // koordinaten in [y, x]//
+    
+        // create popup contents
+    St_AndreasPopup = "<img src='assets/images/PopUp_Gemeindeinformationen_300\%/10.St_Andreas.png' alt='info St_Andreas' width='131px'/>";
+    
+        // popup on mouseover + click -> website
+        L.featureGroup([circleSt_Andreas])
+         .bindPopup(St_AndreasPopup)
+         .on('mouseover', function (e) {
+                this.openPopup();
+            })
+         .on('mouseout', function (e) {
+                this.closePopup();
+            })
+         .on("click", function onClick(e) {
+            window.open("St_Andreas.html#Konzept");})
+        .addTo(map);
+    </script>  
+    
+    
+    <!--//Popup + Link Melanchthonkirche//--> 
+    <script>  
+    var circleMelanchthonkirche = L.circle([404, 577], {
+            color: 'none',
+            fillColor: "white",
+            fillOpacity: 0,
+            radius: 30,
+            }).addTo(map);
+        // koordinaten in [y, x]//
+    
+        // create popup contents
+    MelanchthonkirchePopup = "<img src='assets/images/PopUp_Gemeindeinformationen_300\%/11.1.Melanchthonkirche.png' alt='info Melanchthonkirche' width='206px'/>";
+    
+        // popup on mouseover + click -> website
+        L.featureGroup([circleMelanchthonkirche])
+         .bindPopup(MelanchthonkirchePopup)
+         .on('mouseover', function (e) {
+                this.openPopup();
+            })
+         .on('mouseout', function (e) {
+                this.closePopup();
+            })
+         .on("click", function onClick(e) {
+            window.open("Melanchthonkirche.html#Konzept");})
+        .addTo(map);
+    </script>  
+    
+    
+    <!--//Popup + Link Gnadenkirche// -->
+     <script>  
+    var circleGnadenkirche = L.circle([384, 678], {
+            color: 'none',
+            fillColor: "white",
+            fillOpacity: 0,
+            radius: 30,
+            }).addTo(map);
+        // koordinaten in [y, x]//
+    
+        // create popup contents
+    GnadenkirchePopup = "<img src='assets/images/PopUp_Gemeindeinformationen_300\%/11.2.Gnadenkirche.png' alt='info Gnadenkirche' width='167px'/>";
+    
+        // popup on mouseover + click -> website
+        L.featureGroup([circleGnadenkirche])
+         .bindPopup(GnadenkirchePopup)
+         .on('mouseover', function (e) {
+                this.openPopup();
+            })
+         .on('mouseout', function (e) {
+                this.closePopup();
+            })
+         .on("click", function onClick(e) {
+            window.open("Gnadenkirche.html#Konzept");})
+        .addTo(map);
+    </script> 
+    
+    <!--//Popup + Link Himmelfahrtskirche// -->
+     <script> 
+    var circleHimmelfahrtskirche = L.circle([562, 582], {
+            color: 'none',
+            fillColor: "white",
+            fillOpacity: 0,
+            radius: 30,
+            }).addTo(map);
+        // koordinaten in [y, x]//
+    
+        // create popup contents
+    HimmelfahrtskirchePopup = "<img src='assets/images/PopUp_Gemeindeinformationen_300\%/12.Himmelfahrtskirche.png' alt='info Himmelfahrtskirche' width='201px'/>";
+    
+        // popup on mouseover + click -> website
+        L.featureGroup([circleHimmelfahrtskirche])
+         .bindPopup(HimmelfahrtskirchePopup)
+         .on('mouseover', function (e) {
+                this.openPopup();
+            })
+         .on('mouseout', function (e) {
+                this.closePopup();
+            })
+         .on("click", function onClick(e) {
+            window.open("Himmelfahrtskirche.html#Konzept");})
+        .addTo(map);
+    </script>  
+    
+    <!--//Popup + Link St_Matthaeus_Heroldsberg// -->
+     <script>  
+    var circleSt_Matthaeus_Heroldsberg = L.circle([806, 845], {
+            color: 'none',
+            fillColor: "white",
+            fillOpacity: 0,
+            radius: 30,
+            }).addTo(map);
+        // koordinaten in [y, x]//
+    
+        // create popup contents
+    St_Matthaeus_HeroldsbergPopup = "<img src='assets/images/PopUp_Gemeindeinformationen_300\%/13.St_Matthaeus_Heroldsberg.png' alt='info Heroldsberg' width='157px'/>";
+    
+        // popup on mouseover + click -> website
+        L.featureGroup([circleSt_Matthaeus_Heroldsberg])
+         .bindPopup(St_Matthaeus_HeroldsbergPopup)
+         .on('mouseover', function (e) {
+                this.openPopup();
+            })
+         .on('mouseout', function (e) {
+                this.closePopup();
+            })
+         .on("click", function onClick(e) {
+            window.open("St_Matthaeus_Heroldsberg.html#Konzept");})
+        .addTo(map);
+    </script> 
+    
+        
+    
+    
+      
+    
+    </script>
+    
+    </body>
+    </div> 
+
+
 <h2 id="Mit">Mitnutzung</h2>
 
 <div class="absatz">
