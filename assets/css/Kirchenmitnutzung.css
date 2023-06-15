@@ -7,7 +7,7 @@ h1{
     margin-bottom:10px;
     font-size: clamp(80px, 6vw, 400px);
     padding-left: 2%;
-    font-family: "helvetica", sans-serif;
+    font-family: "helvetica", "Arial", sans-serif;
     line-height: 0.8;
     max-width: 35em;
     display: block;
@@ -15,7 +15,7 @@ h1{
 
 h2{
     font-size: clamp(40px, 3vw, 200px);
-    font-family: "Helvetica",sans-serif;
+    font-family: "Helvetica", "Arial", sans-serif;
     color: rgb(205,23,25);
     line-height: 1.8;
     letter-spacing: 5px;
@@ -28,7 +28,7 @@ h2{
 
 h3{
   font-size: clamp(35px, 1.5vw, 110px);
-  font-family: "Helvetica",sans-serif;
+  font-family: "Helvetica", "Arial" sans-serif;
   color: rgb(205,23,25);
   line-height: 1.8;
   letter-spacing: 1px;
@@ -41,7 +41,7 @@ h3{
 
 h4{
     font-size: clamp(10px, 2vw, 25px);
-    font-family: "helvetica",sans-serif;
+    font-family: "helvetica", "Arial", sans-serif;
     letter-spacing: 2px;
     font-weight: normal;
    margin-top: 13px;
@@ -51,7 +51,7 @@ h4{
 
 p.big{
     font-size: clamp(40px, 2.4vw, 180px);
-    font-family:"garamond";
+    font-family:"garamond", serif;
     line-height: 1.6;
     padding-left: 2%;
     text-align: left;
@@ -60,7 +60,7 @@ p.big{
 
 p{
     font-size: clamp(30px, 1.2vw, 100px);
-    font-family:"garamond";
+    font-family:"garamond", serif;
     line-height: 1.6;
     text-align: left;
 
