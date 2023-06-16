@@ -161,8 +161,7 @@ u1{
 }
 
 .atlasimg {
-    padding: 10%;
-    padding-top: 10px;
+    padding-top: 100px;
     display:inline-block;
     filter:drop-shadow(10px 10px 20px gray);
     
@@ -178,16 +177,16 @@ u1{
 .atlasimg .img-top{
   display: none;
   position:absolute;
-  width:80%;
+  width:100%;
   height:auto;
-  top: 10px;
-  left: 10%;
+  top: 100px;
+  left:0px;
   z-index: 99;
 
 }
 .atlasimg:hover .img-top {
     display:inline;
-    width:80%;
+    width:100%;
     height:auto;
     }
 
