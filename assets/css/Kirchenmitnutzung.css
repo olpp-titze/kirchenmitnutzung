@@ -257,6 +257,7 @@ u1{
     width:100%;
     height:auto;
     }
+
 @media only screen and (max-device-width: 820px) {
     .atlasimg .img-top {
         display:inline;
@@ -265,16 +266,20 @@ u1{
         }
   }
 
-  .atlasimg .img-mobile{
+  .img-mobile{
     display: none;
+    padding-top: 100px;
+    filter:drop-shadow(10px 10px 20px gray);
     width:100%;
     height:auto;
     z-index: 99;
   }  
 
 @media only screen and (max-device-width: 820px) {
-    .atlasimg .img-mobile {
-        display:block;
+    .img-mobile {
+        display:inline-block;
+        padding-top: 100px;
+    filter:drop-shadow(10px 10px 20px gray);
         width:100%;
         height:auto;
         }
