@@ -228,6 +228,13 @@ u1{
     
 }
 
+.atlasmobile {
+  padding-top: 100px;
+  display:inline-block;
+  filter:drop-shadow(10px 10px 20px gray);
+  
+}
+
 .atlasgif {
     float:right;
     padding: 20%;
@@ -246,15 +253,15 @@ u1{
 
 }
 
-.atlasimg:hover .img-top {
+.atlasmobile:hover .img-top {
     display:inline-block;
     width:100%;
     height:auto;
     }
 
 @media only screen and (max-device-width: 820px) {
-    .img-top {
-        display:inline-block;
+    .img-top, .atlasmobile {
+        display:none;
         position:absolute;
         width:100%;
         height:auto;
