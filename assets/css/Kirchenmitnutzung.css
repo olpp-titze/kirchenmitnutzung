@@ -176,11 +176,6 @@ u1{
     .topnav a{
         display: none !important;
     }
-    .atlasimg .img-top {
-      display:inline;
-      width:100%;
-      height:auto;
-      }
 }
 @media screen and (min-width: 1024px) {
   .dropbtn{
@@ -257,7 +252,7 @@ u1{
     }
 
 @media only screen and (max-device-width: 820px) {
-    .atlasimg .img-top {
+    .img-top {
         display:inline;
         width:100%;
         height:auto;
