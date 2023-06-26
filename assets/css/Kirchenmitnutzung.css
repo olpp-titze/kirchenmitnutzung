@@ -239,7 +239,7 @@ u1{
     filter:drop-shadow(10px 10px 20px gray);
     
 }
-.atlasimg .img-top{
+.img-top{
   display: none;
   position:absolute;
   width:100%;
