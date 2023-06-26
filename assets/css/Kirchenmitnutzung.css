@@ -254,6 +254,7 @@ u1{
 @media only screen and (max-device-width: 820px) {
     .img-top {
         display:inline-flex;
+        position:absolute;
         width:100%;
         height:auto;
         }
