@@ -253,7 +253,7 @@ u1{
 
 @media only screen and (max-device-width: 820px) {
     .img-top {
-        display:inline;
+        display:inline-flex;
         width:100%;
         height:auto;
         }
