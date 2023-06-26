@@ -97,7 +97,7 @@ p.unter{
 
 u1{
     margin-top: 20px;
-    font-size: clamp(10px, 0.8vw, 80px);
+    font-size: clamp(20px, 1.2vw, 100px);
     font-family:'Courier New', Courier, monospace;
     padding-left: 2%;
     line-height: 0.8;
