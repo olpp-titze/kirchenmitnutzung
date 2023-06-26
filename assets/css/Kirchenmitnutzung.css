@@ -239,8 +239,9 @@ u1{
   display: none;
   position:absolute;
   width:100%;
+  left:0%;
   height:auto;
-  left:0px;
+
   z-index: 99;
 
 }
