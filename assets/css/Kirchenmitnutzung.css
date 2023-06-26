@@ -260,13 +260,18 @@ u1{
     }
 
 @media only screen and (max-device-width: 820px) {
-    .img-top, .atlasmobile {
+     .atlasmobile {
         display:none;
-        position:absolute;
-        width:100%;
-        height:auto;
+        
         }
   }
+
+  @media only screen and (max-device-width: 820px) {
+    .img-top{
+       display:none;
+       
+       }
+ }
 
   .img-mobile{
     display: none;
