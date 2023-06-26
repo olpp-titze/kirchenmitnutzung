@@ -40,9 +40,11 @@
     <a class="one" href="#Mit"><h4>Mitnutzung</h4></a>
     <a class="one" href="#Umnutzung"><h4>Umnutzung</h4></a>
     </div>
+    
+    <body> 
 <div class="dropdown">
-        <button class="dropbtn" >≡</button>
-        <div class="dropdown-content" >
+        <button onclick="myFunction()" class="dropbtn" >≡</button>
+        <div id="myDropdown" class="dropdown-content" >
             <a  href="#Start"><h5>Start</h5></a>
             <a  href="#Manifest"><h5>Manifest</h5></a>
             <a  href="#Hintergrund"><h5>Hintergrund</h5></a>
@@ -54,6 +56,30 @@
         </div>
       </div>
 </div> 
+
+<script>
+    /* When the user clicks on the button, 
+    toggle between hiding and showing the dropdown content */
+    function myFunction() {
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
+    
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+    </script>
+    </body> 
+
 
 <h2 id="Manifest">Manifest</h2> 
 
